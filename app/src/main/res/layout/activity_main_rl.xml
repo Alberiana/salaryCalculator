@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_rl">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Emri" />
+
+    <EditText
+        android:id="@+id/surname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:ems="10"
+        android:hint="Mbiemri"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/pagabr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/surname"
+        android:ems="10"
+        android:hint="Paga Bruto"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/kalkulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kalkulo"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/pagabr"/>
+
+    <TextView
+        android:id="@+id/paga"
+        android:layout_width="match_parent"
+        android:layout_height="276dp"
+        android:layout_below="@id/kalkulo"
+        android:layout_marginTop="106dp"
+        android:layout_weight="3"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/Fshije"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/kalkulo"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="-16dp"
+        android:layout_marginBottom="-76dp"
+        android:text="Button" />
+
+</RelativeLayout>
