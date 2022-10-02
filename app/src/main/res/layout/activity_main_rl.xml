@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity_rl">
+    tools:context=".activities.MainActivity_rl">
 
     <EditText
         android:id="@+id/name"
@@ -42,9 +42,9 @@
     <TextView
         android:id="@+id/paga"
         android:layout_width="match_parent"
-        android:layout_height="276dp"
+        android:layout_height="207dp"
         android:layout_below="@id/kalkulo"
-        android:layout_marginTop="106dp"
+        android:layout_marginTop="175dp"
         android:layout_weight="3"
         android:textColor="@color/white"
         android:textSize="20dp" />
@@ -57,6 +57,14 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="-16dp"
         android:layout_marginBottom="-76dp"
-        android:text="Button" />
-
+        android:text="Fshije" />
+    <Button
+        android:id="@+id/Shiko"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Fshije"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="-16dp"
+        android:layout_marginBottom="-76dp"
+        android:text="SHIKO"/>
 </RelativeLayout>
