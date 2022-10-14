@@ -52,13 +52,14 @@ public class UsersAdapter extends BaseAdapter {
         viewHolder.getTvNameSurname().setText(dataset.get(i).getName()+" "+dataset.get(i).getSurname());
         viewHolder.getTvpagatatus().setText("Paga e tatueshme eshte: "+dataset.get(i).getPagatat());
         viewHolder.getTvKontributiPensional().setText("Kontributi pensional: "+ dataset.get(i).getKonPensional());
-        if(i%2!=0)
+
+        if(i%2==0)
         {
             viewHolder.getRelLayout().setBackgroundColor(Color.GRAY);
         }
         else
         {
-            viewHolder.getRelLayout().setBackgroundColor(Color.GRAY);
+            viewHolder.getRelLayout().setBackgroundColor(Color.TRANSPARENT);
         }
         return view;
     }

@@ -15,6 +15,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, "NameOfDatabase.db", null, 1);
     }
 
+
+    //look again beacause is not ok
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query="CREATE TABLE "+ UsersTable.TABLE_NAME+"(id INTEGER PRIMARY KEY AUTOINCREMENT, "+

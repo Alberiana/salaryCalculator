@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -26,6 +28,7 @@ public class DetailsOfList extends AppCompatActivity {
 
     ListView lvView;
     UsersAdapter adapter;
+    Animation animation=null;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -37,7 +40,7 @@ public class DetailsOfList extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if (item.getItemId() == R.id.addNew) {
-            Intent intent = new Intent(DetailsOfList.this, MainActivity.class);
+            Intent intent = new Intent(DetailsOfList.this, MainActivity_rl.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
@@ -50,6 +53,7 @@ public class DetailsOfList extends AppCompatActivity {
         lvView = findViewById(R.id.userList);
         adapter = new UsersAdapter(DetailsOfList.this);
         lvView.setAdapter(adapter);
+        animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim);
         lvView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -58,6 +62,9 @@ public class DetailsOfList extends AppCompatActivity {
                 return true;
             }
         });
+        animation.setDuration(200);
+        lvView.setAnimation(animation);
+        animation=null;
         new LoadDataAsync().execute();
     }
 
@@ -84,7 +91,7 @@ public class DetailsOfList extends AppCompatActivity {
             }
             lvView.setOnItemLongClickListener((adapterView, view, listItem, l) -> {
                 new AlertDialog.Builder(DetailsOfList.this)
-                        .setTitle("Do you want to remove " + adapter.dataset.get(listItem) + " from list")
+                        .setTitle("Do you want to remove from list? ")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
