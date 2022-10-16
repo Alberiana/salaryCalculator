@@ -5,9 +5,12 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+//import com.bumptech.glide.Glide;
 
 import com.example.salarycalculator.R;
 import com.example.salarycalculator.models.UsersModel;
@@ -61,6 +64,16 @@ public class UsersAdapter extends BaseAdapter {
         {
             viewHolder.getRelLayout().setBackgroundColor(Color.TRANSPARENT);
         }
+
+
+        Animation anim = AnimationUtils
+                .loadAnimation(c,R.anim.anim);
+
+//        Glide.with(c)
+//                .load(dataset.get(i).getYoast_head_json().getOgImage().get(0).getUrl())
+//                .into(viewHolder.imgNews);
+//        viewHolder.getImgNews().setAnimation(anim);
+        view.startAnimation(anim);
         return view;
     }
 }

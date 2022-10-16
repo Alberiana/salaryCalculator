@@ -54,6 +54,9 @@ public class DetailsOfList extends AppCompatActivity {
         adapter = new UsersAdapter(DetailsOfList.this);
         lvView.setAdapter(adapter);
         animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim);
+        animation.setDuration(200);
+        lvView.setAnimation(animation);
+        animation=null;
         lvView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -62,9 +65,7 @@ public class DetailsOfList extends AppCompatActivity {
                 return true;
             }
         });
-        animation.setDuration(200);
-        lvView.setAnimation(animation);
-        animation=null;
+
         new LoadDataAsync().execute();
     }
 
