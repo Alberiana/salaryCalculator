@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="Emri" />
+        android:hint="@string/txtv1" />
 
     <EditText
         android:id="@+id/surname"
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"
         android:ems="10"
-        android:hint="Mbiemri"
+        android:hint="@string/txtv2"
         android:inputType="textPersonName" />
 
     <EditText
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/surname"
         android:ems="10"
-        android:hint="Paga Bruto"
+        android:hint="@string/txtv3"
         android:inputType="number" />
 
     <Button

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">salaryCalculator</string>
+    <string name="txtv1">Nom</string>
+    <string name="txtv2">Nom de famille</string>
+    <string name="txtv3">Salaire brut</string>
+
+</resources>

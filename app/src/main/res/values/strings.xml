@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">salaryCalculator</string>
+    <string name="txtv1">Emri</string>
+    <string name="txtv2">Mbiemri</string>
+    <string name="txtv3">Paga bruto</string>
+
 </resources>
