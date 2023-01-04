@@ -25,7 +25,7 @@ public class MainActivity_rl extends AppCompatActivity {
 
     EditText name, surname, pagabr;
     TextView paga;
-    Button kalkulo, fshije, shiko;
+    Button kalkulo, fshije, shiko, fshije2;
     ProgressBar progressBar, progressBar2;
     int counter=0;
     @Override
@@ -38,6 +38,7 @@ public class MainActivity_rl extends AppCompatActivity {
         paga = findViewById(R.id.paga);
         kalkulo = findViewById(R.id.kalkulo);
         fshije = findViewById(R.id.Fshije);
+        fshije2=findViewById(R.id.Fshije2);
         shiko = findViewById(R.id.Shiko);
         progressBar=findViewById(R.id.progressBar);
         progressBar2=findViewById(R.id.progressBar2);
@@ -65,8 +66,15 @@ public class MainActivity_rl extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SQLiteDatabase objDB = new DatabaseHelper(MainActivity_rl.this).getWritableDatabase();
+                ContentValues cv = new ContentValues();
 
                 Integer var=objDB.delete(UsersTable.TABLE_NAME,null,null);
+//                long id = objDB.insert(UsersTable.TABLE_NAME, null, cv);
+
+                    Toast.makeText(MainActivity_rl.this, "Te  dhenat u fshine!", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(MainActivity_rl.this, DetailsOfList.class);
+//                    startActivity(intent);
+
             }
         });
 
@@ -122,6 +130,15 @@ public class MainActivity_rl extends AppCompatActivity {
 
 
 
+            }
+        });
+
+        fshije2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                name.getText().clear();
+                surname.getText().clear();
+                pagabr.getText().clear();
             }
         });
     }
