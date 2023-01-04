@@ -26,7 +26,7 @@ public class MainActivity_rl extends AppCompatActivity {
     EditText name, surname, pagabr;
     TextView paga;
     Button kalkulo, fshije, shiko, fshije2;
-    ProgressBar progressBar, progressBar2;
+    ProgressBar progressBar;
     int counter=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +41,6 @@ public class MainActivity_rl extends AppCompatActivity {
         fshije2=findViewById(R.id.Fshije2);
         shiko = findViewById(R.id.Shiko);
         progressBar=findViewById(R.id.progressBar);
-        progressBar2=findViewById(R.id.progressBar2);
-        progressBar2.setVisibility(View.INVISIBLE);
         progressBar.setVisibility(View.INVISIBLE);
 
         kalkulo.setOnClickListener(new View.OnClickListener() {
@@ -69,12 +67,7 @@ public class MainActivity_rl extends AppCompatActivity {
                 ContentValues cv = new ContentValues();
 
                 Integer var=objDB.delete(UsersTable.TABLE_NAME,null,null);
-//                long id = objDB.insert(UsersTable.TABLE_NAME, null, cv);
-
                     Toast.makeText(MainActivity_rl.this, "Te  dhenat u fshine!", Toast.LENGTH_SHORT).show();
-//                    Intent intent = new Intent(MainActivity_rl.this, DetailsOfList.class);
-//                    startActivity(intent);
-
             }
         });
 
@@ -84,7 +77,6 @@ public class MainActivity_rl extends AppCompatActivity {
                 String nameTxt = name.getText().toString();
                 String surnameTxt = surname.getText().toString();
                 Double paga = Double.parseDouble(pagabr.getText().toString());
-
 
                 Timer timer=new Timer();
 
@@ -100,14 +92,14 @@ public class MainActivity_rl extends AppCompatActivity {
                 cv.put(UsersTable.pagabr, paga);
                 cv.put(UsersTable.kontributi_pensional, kontributi_pensional);
                 cv.put(UsersTable.pagae_tatueshme, paga_tatueshme);
-                progressBar2.setVisibility(View.VISIBLE);
+//                progressBar2.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.VISIBLE);
                 TimerTask timerTask=new TimerTask() {
                     @Override
                     public void run() {
                         counter++;
                         progressBar.setProgress(counter);
-                        progressBar2.setProgress(counter);
+//                        progressBar2.setProgress(counter);
                         if(counter==50){
                             timer.cancel();
                         long id = objDB.insert(UsersTable.TABLE_NAME, null, cv);
@@ -127,9 +119,6 @@ public class MainActivity_rl extends AppCompatActivity {
                     }
                 };
                 timer.schedule(timerTask, 100,100);
-
-
-
             }
         });
 

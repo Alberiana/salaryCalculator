@@ -64,15 +64,8 @@ public class UsersAdapter extends BaseAdapter {
         {
             viewHolder.getRelLayout().setBackgroundColor(Color.TRANSPARENT);
         }
-
-
         Animation anim = AnimationUtils
                 .loadAnimation(c,R.anim.anim);
-
-//        Glide.with(c)
-//                .load(dataset.get(i).getYoast_head_json().getOgImage().get(0).getUrl())
-//                .into(viewHolder.imgNews);
-//        viewHolder.getImgNews().setAnimation(anim);
         view.startAnimation(anim);
         return view;
     }

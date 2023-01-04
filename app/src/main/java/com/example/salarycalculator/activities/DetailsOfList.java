@@ -113,7 +113,6 @@ public class DetailsOfList extends AppCompatActivity {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             getDbData();
             return null;
         }

@@ -15,17 +15,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, "NameOfDatabase.db", null, 1);
     }
 
-
-    //look again beacause is not ok
+    //need to look again
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query="CREATE TABLE "+ UsersTable.TABLE_NAME+"(id INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 "name TEXT, "+
                 "surname TEXT, "+
-                "personal_no TEXT, "+
-                "email TEXT, "+
-                "password TEXT)";
-//        deleteAllData();
+                "pagabr TEXT)";
         db.execSQL(query);
     }
 
@@ -35,12 +31,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+UsersTable.TABLE_NAME);
         onCreate(db);
     }
-//    void deleteAllData()
-//    {
-//        SQLiteDatabase sdb= this.getWritableDatabase();
-//        sdb.delete(UsersTable.TABLE_NAME, null, null);
-//
-//    }
 
     public  Integer deleteAllData(){
         SQLiteDatabase db=this.getWritableDatabase();
