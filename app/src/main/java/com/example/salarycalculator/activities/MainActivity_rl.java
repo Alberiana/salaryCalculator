@@ -61,6 +61,14 @@ public class MainActivity_rl extends AppCompatActivity {
             }
         });
 
+        fshije.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase objDB = new DatabaseHelper(MainActivity_rl.this).getWritableDatabase();
+
+                Integer var=objDB.delete(UsersTable.TABLE_NAME,null,null);
+            }
+        });
 
         shiko.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +110,8 @@ public class MainActivity_rl extends AppCompatActivity {
                             startActivity(intent);
                         } else {
                             Toast.makeText(MainActivity_rl.this, "Regjistrimi deshtoi", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(String.valueOf(MainActivity_rl.this));
+                            startActivity(intent);
                         }
 
 

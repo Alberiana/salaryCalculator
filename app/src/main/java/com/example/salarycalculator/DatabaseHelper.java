@@ -25,13 +25,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "personal_no TEXT, "+
                 "email TEXT, "+
                 "password TEXT)";
+//        deleteAllData();
         db.execSQL(query);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+
         db.execSQL("DROP TABLE IF EXISTS "+UsersTable.TABLE_NAME);
         onCreate(db);
     }
+//    void deleteAllData()
+//    {
+//        SQLiteDatabase sdb= this.getWritableDatabase();
+//        sdb.delete(UsersTable.TABLE_NAME, null, null);
+//
+//    }
 
+    public  Integer deleteAllData(){
+        SQLiteDatabase db=this.getWritableDatabase();
+        return db.delete(UsersTable.TABLE_NAME,null,null);
+    }
 }
